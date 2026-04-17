@@ -1,0 +1,55 @@
+.card-transacao {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.entrada {
+  background-color: #2e7d32;
+}
+
+.saida {
+  background-color: #c62828;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.baixo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.valor {
+  font-weight: bold;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  flex: 1 1 200px;
+}
+
+button {
+  height: 56px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}

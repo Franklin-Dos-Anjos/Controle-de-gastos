@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Nova Transação</h2>
+
+  <div class="form">
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Descrição</mat-label>
+      <input matInput [(ngModel)]="novaTransacao.descricao" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Valor</mat-label>
+      <input matInput type="number" [(ngModel)]="novaTransacao.valor" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Data</mat-label>
+      <input matInput type="date" [(ngModel)]="novaTransacao.data" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Tipo</mat-label>
+      <mat-select placeholder="Selecione" [(ngModel)]="novaTransacao.tipo">
+        <mat-option *ngFor="let t of tipos" [value]="t.value">
+          {{ t.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Categoria</mat-label>
+      <mat-select placeholder="Selecione" [(ngModel)]="novaTransacao.categoria">
+        <mat-option *ngFor="let c of categorias" [value]="c">
+          {{ c.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+  </div>
+
+  <hr />
+
+  <h2>Transações</h2>
+
+  <ul>
+    <div *ngFor="let t of transacoes" [ngClass]="getClasse(t.tipo)" class="card-transacao">
+      <div class="topo">
+        <strong>{{ t.descricao }}</strong>
+        <span>R$ {{ t.valor }}</span>
+      </div>
+
+      <div class="baixo">
+        <small>{{ t.data }}</small>
+        <span>{{ t.categoria.nome }}</span>
+      </div>
+    </div>
+  </ul>
+</div>
